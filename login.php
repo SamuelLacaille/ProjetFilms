@@ -7,13 +7,11 @@ include('inc/header.php');
 <section id="connexion">
     <div class="wrap">
         <h2>Connexion</h2>
-        <form>
-            <label for="login">Pseudo ou email</label>
-            <input type="text" name="login" id="login">
+        <form method="post">
+            <input type="text" name="login" id="login" placeholder="Pseudo ou email">
             <p class="error"></p>
 
-            <label for="password">Mot de passe</label>
-            <input type="password" name="password" id="password" value="">
+            <input type="password" name="password" id="password" value="" placeholder="Mot de passe">
             <p class="error"></p>   
 
             <input type="submit" name="submitted" value="Connexion">
