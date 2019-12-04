@@ -9,12 +9,13 @@
 
 /* PAGE INSCRIPTION */
 img {
+    margin-left: 2.5% ;
+    width: 95%;
     max-height: 100%;
     opacity: 0.5;
      position:absolute;
     -webkit-filter: drop-shadow(16px 16px 10px rgba(0,0,0,0.9));
     filter: drop-shadow(16px 16px 10px rgba(0,0,0,0.9));
-
 }
 h2 {
     text-align: center;

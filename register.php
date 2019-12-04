@@ -1,12 +1,13 @@
 <?php
 include('inc/header.php');
 include 'inc/pdo.php';
-include 'functions/functions.php';
+include 'inc/formregister.php'
 
 
 ?>
 
 <section id="register">
+    <img src="assets/img/back.jpg">
 <div class="wrap">
     <h2> Inscription </h2>
     <form class="form" action="register.php" method="post">
@@ -32,7 +33,9 @@ include 'functions/functions.php';
         <input type="submit" name="submitted" value="Inscription">
     </form>
 </div>
+    <div class="clear"></div>
 </section>
+
 
 
 
