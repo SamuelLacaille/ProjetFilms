@@ -10,6 +10,7 @@
 <header>
     <nav class="nav">
         <ul>
+            <li><a href="admin.php">Admin</a></li>
         </ul>
     </nav>
 </header>
