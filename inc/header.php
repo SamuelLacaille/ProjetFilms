@@ -11,6 +11,7 @@
     <nav class="nav">
         <ul>
             <li><a href="admin.php">Admin</a></li>
+            <li><a href="register.php">Inscription</a></li>
         </ul>
     </nav>
 </header>
