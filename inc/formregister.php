@@ -64,5 +64,6 @@ if(!empty($_POST['submitted'])) {
         $query->bindValue(':token', $token, PDO::PARAM_STR);
         $query->execute();
         $success = true;
+        header('Location : login.php');
     }
 }
