@@ -45,6 +45,7 @@ if (!empty($_POST['submitted'])) {
 <section id="connexion">
     <div class="wrap">
         <h2>Connexion</h2>
+        <div class="img">
         <form method="post">
             <label for="login"></label>
             <input type="text" name="login" id="login" placeholder="Pseudo ou email">
@@ -57,6 +58,7 @@ if (!empty($_POST['submitted'])) {
             <input type="submit" name="submitted" value="Connexion">
         </form>
         <a href="">Mot de passe oublié</a>
+        </div>
     </div>
 </section>
 
