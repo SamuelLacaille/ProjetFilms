@@ -3,7 +3,6 @@ include('inc/header.php');
 
 ?>
 
-<body>
 <section id="connexion">
     <div class="wrap">
         <h2>Connexion</h2>
@@ -25,7 +24,7 @@ include('inc/header.php');
 
 
 
-</body>
+
 
 
 <?php
