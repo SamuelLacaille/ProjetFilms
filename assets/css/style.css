@@ -1,0 +1,66 @@
+@import 'reset.css';
+.wrap {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+
+/* PAGE INSCRIPTION */
+#register {
+    background-color: #1c294e;
+}
+.img{
+    filter: drop-shadow(16px 16px 10px rgba(0,0,0,0.9));
+    position: relative;
+}
+img{
+    opacity: 0.5;
+    width: 100%;
+    display: inline;
+}
+
+
+#register h2 {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+form {
+    position: absolute;
+    color: white;
+    padding-top: 100px;
+    width: 100%;
+    margin-left: -60%;
+    display: inline;
+}
+
+
+
+input{
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    padding: 12px 32px;
+    margin: 20px 2px;
+
+}
+input[type=submit]{
+    margin-left: 4.5%;
+}
+
+input[type=submit]:hover {
+    background-color: #1c294e;
+    transition: .2s;
+
+}
+
+
+
+/* PAGE CONNEXION */
+
+
