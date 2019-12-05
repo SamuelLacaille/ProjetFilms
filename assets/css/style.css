@@ -107,6 +107,9 @@ footer nav ul li a{
     transition: .2s;
 
 }
+#register .error{
+    color: red;
+}
 
 
 
@@ -159,4 +162,9 @@ footer nav ul li a{
     background-color: #1c294e;
     transition: .2s;
 
+}
+
+
+#filmuti {
+    padding-top: 100px;
 }
