@@ -66,8 +66,8 @@ if (!empty($_POST['submitted'])) {
                             } ?></p>
                     </div>
                     <input type="submit" name="submitted" value="Connexion">
-                    <a href="">Mot de passe oublié</a>
                 </form>
+                <a href="mdp-oublie.php">Mot de passe oublié</a>
 
             </div>
         </div>
