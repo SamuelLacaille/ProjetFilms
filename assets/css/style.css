@@ -173,3 +173,7 @@ footer nav ul li a{
 #filmuti {
     padding-top: 100px;
 }
+.film{
+    float: left;
+    width: 20%;
+}
