@@ -6,54 +6,100 @@
     padding: 0 10px;
 }
 
+/* HEADER */
+header  {
+    position: fixed;
+    background: linear-gradient(50deg, #0F1A38, #1c294e);
+    width: 100%;
 
-/* PAGE INSCRIPTION */
+}
+
+
+header nav ul li a {
+    font-size: 1.3em;
+    color: #fff;
+    float: right;
+    text-align: center;
+    padding: 18px 40px;
+
+}
+
+header nav ul li a:hover {
+    color: #1c294e;
+}
+header img {
+    width: 130px;
+    height: 30px;
+    max-width: 100%;
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+
+/* FOOTER */
+footer {
+    background-color: #0F1A38;
+    width: 100%;
+}
+footer nav ul li a{
+    font-size: 1.3em;
+    color: #fff;
+    float: right;
+    text-align: center;
+    padding: 18px 40px;
+    background-color: #0F1A38;
+    width: 100%;
+}
+
+    /* PAGE INSCRIPTION */
 #register {
     background-color: #1c294e;
+    padding-top: 70px;
 }
-.img{
-    filter: drop-shadow(16px 16px 10px rgba(0,0,0,0.9));
+#register.img{
+
     position: relative;
+
 }
-img{
+#register img{
     opacity: 0.5;
     width: 100%;
-    display: inline;
+    filter: drop-shadow(16px 16px 10px rgba(0,0,0,3));
+    padding-bottom: 60px;
 }
 
 
 #register h2 {
-    font-size: 2em;
+    font-size: 2.2em;
     color: white;
     text-align: center;
     padding: 10px 0;
+    letter-spacing: 8px;
 }
-
-form {
+#register .form {
     position: absolute;
-    color: white;
-    padding-top: 100px;
-    width: 100%;
-    margin-left: -60%;
-    display: inline;
+    margin-left: 35%;
+    max-width: 300px;
+    top: 200px;
 }
 
 
 
-input{
+
+#register input{
     background-color: white;
-    border: none;
     border-radius: 5px;
     color: black;
     padding: 12px 32px;
-    margin: 20px 2px;
-
+    margin: 20px 0;
+    border: 3px solid #1c294e;
 }
-input[type=submit]{
-    margin-left: 4.5%;
+#register input[type=submit]{
+    margin-left: 21%;
 }
 
-input[type=submit]:hover {
+#register input[type=submit]:hover {
     background-color: #1c294e;
     transition: .2s;
 
@@ -63,4 +109,51 @@ input[type=submit]:hover {
 
 /* PAGE CONNEXION */
 
+#connexion {
+    background-color: #1c294e;
+    padding-top: 70px;
+}
+#connexion.img2{
+    position: relative;
+}
+#connexion img{
+    opacity: 0.5;
+    width: 100%;
+    filter: drop-shadow(16px 16px 10px rgba(0,0,0,3));
+    padding-bottom: 60px;
+}
+#connexion h2 {
+    font-size: 2.2em;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    letter-spacing: 8px;
+}
 
+#connexion form {
+    position: absolute;
+    margin-left: 35%;
+    max-width: 300px;
+    top: 200px;
+}
+
+
+
+#connexion input{
+    background-color: white;
+    border: 3px solid #1c294e;
+    border-radius: 5px;
+    color: black;
+    padding: 12px 32px;
+    margin: 40px 0;
+
+}
+#connexion input[type=submit]{
+    margin-left: 21%;
+}
+
+#connexion input[type=submit]:hover {
+    background-color: #1c294e;
+    transition: .2s;
+
+}
