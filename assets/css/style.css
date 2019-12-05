@@ -160,3 +160,8 @@ footer nav ul li a{
     transition: .2s;
 
 }
+
+.film{
+    float: left;
+    width: 20%;
+}
