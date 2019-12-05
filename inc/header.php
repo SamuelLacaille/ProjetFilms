@@ -9,12 +9,16 @@
 <body>
 <header>
     <nav class="nav">
+        <a href="index.php"><img src="assets/img/img2.png" ></a>
         <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="admin.php">Admin</a></li>
             <li><a href="register.php">Inscription</a></li>
             <li><a href="login.php">Login</a></li>
+
+            <li><a href="admin.php">Admin</a></li>
+
+            <li><a href="index.php">Home</a></li>
         </ul>
     </nav>
+    <div class="clear"></div>
 </header>
 

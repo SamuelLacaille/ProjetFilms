@@ -6,7 +6,7 @@ require 'functions/functions.php';
 
 $errors = array();
 $success = false;
-debug($_SESSION);
+
 
 if (!empty($_POST['submitted'])) {
     //XSS
@@ -42,25 +42,29 @@ if (!empty($_POST['submitted'])) {
 
 ?>
 
-<section id="connexion">
-    <div class="wrap">
-        <h2>Connexion</h2>
-        <div class="img">
-        <form method="post">
-            <label for="login"></label>
-            <input type="text" name="login" id="login" placeholder="Pseudo ou email">
-            <p class="error"></p>
+    <section id="connexion">
+        <div class="wrap">
+            <h2>CONNEXION</h2>
+            <div class="img2">
+                <img src="assets/img/back.jpg">
+                <form method="post">
+                    <div class="pseudo">
+                        <label for="login"></label>
+                        <input type="text" name="login" id="login" placeholder="Pseudo ou email">
+                        <p class="error"></p>
+                    </div>
+                    <div class="password password1">
+                        <label for="password"></label>
+                        <input type="password" name="password" id="password" value="" placeholder="Mot de passe">
+                        <p class="error"></p>
+                    </div>
+                    <input type="submit" name="submitted" value="Connexion">
+                    <a href="">Mot de passe oublié</a>
+                </form>
 
-            <label for="password"></label>
-            <input type="password" name="password" id="password" value="" placeholder="Mot de passe">
-            <p class="error"></p>
-
-            <input type="submit" name="submitted" value="Connexion">
-        </form>
-        <a href="">Mot de passe oublié</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 
