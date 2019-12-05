@@ -1,6 +1,7 @@
 <?php
 include('inc/header.php');
-
+$errors = array();
+$success = false;
 ?>
 
 
@@ -14,11 +15,13 @@ include('inc/header.php');
             <img src="">
             <p>Titre</p>
             <p>Date</p>
-            <a href=""> <p>1</p></a>
-            <a href=""> <p>2</p></a>
-            <a href=""> <p>3</p></a>
-            <a href=""> <p>4</p></a>
-            <a href=""> <p>5</p></a>
+            <form action="filmuti.php" method="post">
+                <input type="number"name="rate" id="rate" placeholder="Note">
+                <p class="error"><?php if (!empty($errors['rate'])) {
+                        echo $errors['rate'];
+                    } ?></p>
+                <input type="submit" name="submitted">
+            </form>
             <a href="">Supprimer ce film</a>
         </div>
     </div>

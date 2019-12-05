@@ -10,35 +10,38 @@ $success = false;
 
 if (!empty($_POST['submitted'])) {
     //XSS
-    $pseudo = clean($_POST['login']);
-    $mdp = clean($_POST['password']);
+    $login = clean($_POST['login']);
+    $password = clean($_POST['password']);
 
-    if (empty($login) || empty($mdp)) {
+    if (empty($login) || empty($password)) {
         $errors['login'] = 'Pseudo ou mot de passe incorrect';
     } else {
         $sql = "SELECT * FROM users WHERE pseudo = :login OR email = :login";
         $query = $pdo->prepare($sql);
-        $query->bindValue(':login', $pseudo, PDO::PARAM_STR);
+        $query->bindValue(':login', $login, PDO::PARAM_STR);
         $query->execute();
         $user = $query->fetch();
-        debug($user);
         if (!empty($user)) {
-            if (password_verify($mdp, $user['password'])) {
+            if (password_verify($password, $user['password'])) {
                 $_SESSION['login'] = array(
-                    'id'        => $user['id'],
-                    'pseudo'    => $user['pseudo'],
-                    'role'      => $user['role'],
-                    'ip'        => $_SERVER['REMOTE_ADDR']
+                    'id' => $user['id'],
+                    'pseudo' => $user['pseudo'],
+                    'role' => $user['role'],
+                    'ip' => $_SERVER['REMOTE_ADDR']
                 );
-
+                header('Location: index.php');
+            } else {
+                $errors['login'] = 'Pseudo ou email inconnu ou mot de passe oublié';
             }
+
+        } else {
+            $errors['login'] = 'pseudo ou email inconnu';
+
+
         }
-
     }
-
-
-
 }
+
 
 ?>
 
@@ -51,16 +54,20 @@ if (!empty($_POST['submitted'])) {
                     <div class="pseudo">
                         <label for="login"></label>
                         <input type="text" name="login" id="login" placeholder="Pseudo ou email">
-                        <p class="error"></p>
+                        <p class="error"><?php if (!empty($errors['login'])) {
+                                echo $errors['login'];
+                            } ?></p>
                     </div>
                     <div class="password password1">
                         <label for="password"></label>
                         <input type="password" name="password" id="password" value="" placeholder="Mot de passe">
-                        <p class="error"></p>
+                        <p class="error"><?php if (!empty($errors['password'])) {
+                                echo $errors['password'];
+                            } ?></p>
                     </div>
                     <input type="submit" name="submitted" value="Connexion">
-                    <a href="">Mot de passe oublié</a>
                 </form>
+                <a href="mdp-oublie.php">Mot de passe oublié</a>
 
             </div>
         </div>

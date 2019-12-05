@@ -107,6 +107,9 @@ footer nav ul li a{
     transition: .2s;
 
 }
+#register .error{
+    color: red;
+}
 
 
 
@@ -161,7 +164,12 @@ footer nav ul li a{
 
 }
 
-.film{
-    float: left;
-    width: 20%;
+#mdpoublie {
+    padding-top: 200px;
+}
+#mdpmodif {
+    padding-top: 200px;
+}
+#filmuti {
+    padding-top: 100px;
 }
