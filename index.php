@@ -7,7 +7,7 @@ $title = 'homepage';
 
 
 
-$sql= "SELECT title, id FROM movies_full ORDER BY RAND() LIMIT 100";
+$sql= "SELECT * FROM movies_full ORDER BY RAND() LIMIT 100";
 $query = $pdo->prepare($sql);
 $query->execute();
 
@@ -38,6 +38,7 @@ include 'inc/header.php';
             <h2>Affiner la recherche</h2>
             <form class="triage">
                 <p>Par genre : </p>
+                <!-- beaucoup de checkbox ,<input type='checkbox' name="categorie[]">,  $_POST['categorie']=>array() -->
                 <div>
                     <input type="checkbox" id="drama" name="drama">
 
@@ -147,10 +148,10 @@ include 'inc/header.php';
                 <caption>
                     <ul>
                         <li><?php echo $movie['title']; ?></li>
-                        <a href="detail.php" target="_blank">Plus d'informations</a>
+                        <a href="detail.php?slug=<?php echo $movie['slug']; ?>"target="_blank">Plus d'informations</a>
                     </ul>
                 </caption>
-
+            </div>
             <?php }   ?>
 
 
@@ -167,6 +168,3 @@ include 'inc/header.php';
 <?php include 'inc/footer.php';
 
 
-
-//order by rand() LIMIT 100
-//LIKE
