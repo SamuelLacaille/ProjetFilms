@@ -118,7 +118,7 @@ function inputDate($err, $date, $key)
 }
 function is_logged()
 {
-    $roles = array('abonne','admin');
+    $roles = array('user','admin');
     if (!empty ($_SESSION['login'])){
         if (!empty($_SESSION['login']) && is_numeric($_SESSION['login']['id'])){
             if (!empty($_SESSION['login']['pseudo'])){
