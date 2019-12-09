@@ -24,8 +24,8 @@ if(!empty($_POST['submitted'])) {
         $query = $pdo->prepare($sql);
         $query->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
         $query->execute();
-        $verif = $query->fetch();
-        if (!empty($verif)) {
+        $verifpseudo = $query->fetch();
+        if (!empty($verifpseudo)) {
             $errors['pseudo'] = 'Ce pseudo existe déjà';
         }
     }
@@ -37,9 +37,9 @@ if(!empty($_POST['submitted'])) {
         $query = $pdo->prepare($sql);
         $query->bindValue(':email', $email, PDO::PARAM_STR);
         $query->execute();
-        $verif = $query->fetch();
+        $verifemail = $query->fetch();
 
-        if (!empty($verif)) {
+        if (!empty($verifemail)) {
             $errors['email'] = 'Cette adresse mail existe déjà';
         }
     }
@@ -56,14 +56,14 @@ if(!empty($_POST['submitted'])) {
         $hash = password_hash($password1, PASSWORD_BCRYPT);
         $token = generateRandomString(255);
 
-        $sql = "INSERT INTO users VALUES (null, :pseudo, :email, :pass, 'user', :token, NOW())";
+        $sql = "INSERT INTO users VALUES (null, :pseudo, :email, :password, :token, 'user', NOW())";
         $query = $pdo->prepare($sql);
         $query->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
         $query->bindValue(':email', $email, PDO::PARAM_STR);
-        $query->bindValue(':pass', $hash, PDO::PARAM_STR);
+        $query->bindValue(':password', $hash, PDO::PARAM_STR);
         $query->bindValue(':token', $token, PDO::PARAM_STR);
         $query->execute();
         $success = true;
-        header('Location : login.php');
+       // header('Location : login.php');
     }
 }

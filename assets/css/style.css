@@ -11,7 +11,6 @@ body {
 
 /* HEADER */
 header  {
-    position: fixed;
     background: linear-gradient(50deg, #0F1A38, #1c294e);
     width: 100%;
 

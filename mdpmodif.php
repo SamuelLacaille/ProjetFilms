@@ -1,5 +1,6 @@
 <?php
-include('functions/functions.php');
+session_start();
+include 'functions/functions.php';
 include('inc/pdo.php');
 $title = 'Modifier votre mot de passe';
 $errors = array();
@@ -63,4 +64,5 @@ include('inc/header.php'); ?>
         <input type="submit" name="submitted" value="envoyer">
     </form>
 </section>
+
 <?php include('inc/footer.php');

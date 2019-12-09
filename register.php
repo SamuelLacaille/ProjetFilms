@@ -1,9 +1,10 @@
 <?php
 session_start();
-include('inc/header.php');
+
+
 include 'inc/pdo.php';
 include 'inc/formregister.php';
-
+include('inc/header.php');
 
 ?>
 
