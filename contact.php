@@ -1,8 +1,8 @@
 <?php
 include ('inc/header.php');
+include 'inc/formcontact.php';
 ?>
 
-<body>
 <h2>Nous contacter</h2>
 <div class="wrap">
     <form method="post">
@@ -24,9 +24,6 @@ include ('inc/header.php');
         <input type="submit" name="submitted" value="Envoyer">
     </form>
 </div>
-
-</body>
-
 
 <?php
 include ('inc/footer.php');

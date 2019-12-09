@@ -1,11 +1,13 @@
 <?php
 session_start();
-include('inc/header.php');
+include 'functions/functions.php';
 require 'inc/pdo.php';
-require 'functions/functions.php';
+
 
 $errors = array();
 $success = false;
+
+debug($_SESSION);
 
 
 if (!empty($_POST['submitted'])) {
@@ -29,7 +31,7 @@ if (!empty($_POST['submitted'])) {
                     'role' => $user['role'],
                     'ip' => $_SERVER['REMOTE_ADDR']
                 );
-                header('Location: index.php');
+
             } else {
                 $errors['login'] = 'Pseudo ou email inconnu ou mot de passe oublié';
             }
@@ -41,7 +43,7 @@ if (!empty($_POST['submitted'])) {
         }
     }
 }
-
+include('inc/header.php');
 
 ?>
 

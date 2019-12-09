@@ -11,12 +11,10 @@ body {
 
 /* HEADER */
 header  {
-    position: fixed;
     background: linear-gradient(50deg, #0F1A38, #1c294e);
     width: 100%;
 
 }
-
 
 header nav ul li a {
     font-size: 1.3em;
@@ -28,7 +26,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #1c294e;
+    color: #315f9b;
 }
 header img {
     width: 130px;
@@ -142,8 +140,6 @@ footer nav ul li a{
     max-width: 300px;
     top: 200px;
 }
-
-
 
 #connexion input{
     background-color: white;
