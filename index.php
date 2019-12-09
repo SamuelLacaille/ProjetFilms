@@ -15,23 +15,41 @@ $movies = $query->fetchAll();
 // debug($movies);
 
  //par decennie, value="1880-1890" -> explod
-if(!empty($_POST['tri'])){
-    $sql = "SELECT * FROM movies_full WHERE year BETWEEN '$annee1' AND '$annee2'";
+/*if(!empty($_POST['tri'])){
+    $sql = "SELECT * FROM movies_full WHERE year BETWEEN '' AND '' ";
     $query = $pdo->prepare($sql);
     $query->execute();
     $decennie = $query->fetchAll();
 
 
 
+} */
+
+if(!empty($_POST['tri'])) {
+    $sql = "SELECT * FROM movies_full WHERE 1 = 1";
+    $genres = $_POST['genres'];
+    if (!empty($genres)) {
+        $sql .= ' AND  genres LIKE "%' . $genres[0] . '%" ';
+
+
+        echo $sql;
+        $query = $pdo->prepare($sql);
+        $query->execute();
+        $genresMovies = $query->fetchAll();
+    }
+
+
+
 }
 
 
-if(!empty($_POST['tri'])){
-    $sql = "SELECT DISTINCT genres FROM movies_full";
-    $query = $pdo->prepare($sql);
-    $query->execute();
-    $genres = $query->fetchAll();
-}
+
+
+
+
+
+
+
 
 
 include 'inc/header.php';
@@ -51,7 +69,7 @@ include 'inc/header.php';
             <!-- beaucoup de checkbox ,<input type='checkbox' name="categorie[]">,  $_POST['categorie']=>array() -->
             <div>
 
-                    <input type="checkbox" name= "genres[]" value="drama">
+                    <input type="checkbox" name="genres[]" value="drama">
                     <label for="drama">drama</label>
                     <input type="checkbox" name="genres[]" value="fantasy">
                     <label for="fantasy">fantasy</label>
@@ -100,7 +118,28 @@ include 'inc/header.php';
             <p>Par décennie : </p>
 
             <div>
+                <?php
+                $arrayDecennie = array( '1880-1889',
+                    '1890-1899',
+                    '1900-1909',
+                    '1910-1919',
+                    '1920-1929',
+                    '1930-1939',
+                    '1940-1949',
+                    '1950-1959',
+                    '1960-1969',
+                    '1970-1979',
+                    '1980-1989',
+                    '1990-1999',
+                    '2000-2009',
+                    '2010-2019');
 
+                $annee1 = explode('-',$arrayDecennie[0]);
+                // print_r($annee1);
+                $annee2 = explode('-',$arrayDecennie[1]);
+
+
+                ?>
 
 
                 <input type="number" id="dateFilm" name="dateFilm"
@@ -117,6 +156,38 @@ include 'inc/header.php';
 
     <a id="films">
         <h2>Les films</h2>
+        <?php  if(!empty($_POST['tri'])) {
+            foreach ($genresMovies as $genresMovie) {
+            $filename = 'posters/' . $genresMovie['id'] . '.jpg';
+
+            if (file_exists($filename)) { ?>
+                <div class="film">
+                    <img src="posters/<?php echo $genresMovie['id']; ?>.jpg" alt="affiche du film">
+                    <caption>
+                        <ul>
+                            <li><?php echo $genresMovie['title']; ?></li>
+                            <a href="detail.php?slug=<?php echo $genresMovie['slug']; ?>" target="_blank">Plus
+                                d'informations</a>
+                        </ul>
+                    </caption>
+                </div>
+            <?php } else { ?>
+                <div class="film">
+                    <img src="assets/img/afficheInconnu.jpg" alt="affiche du film" width="300" height="300">
+                    <caption>
+                        <ul>
+                            <li><?php echo $genresMovie['title']; ?></li>
+                            <a href="detail.php?slug=<?php echo $genresMovie['slug']; ?>" target="_blank">Plus
+                                d'informations</a>
+                        </ul>
+                    </caption>
+                </div>
+            <?php } ?>
+        <?php } ?>
+        <?php }else ?>
+
+
+
         <?php foreach ($movies as $movie) {
             $filename = 'posters/' . $movie['id'] . '.jpg';
 
