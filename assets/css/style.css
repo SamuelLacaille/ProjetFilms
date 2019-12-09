@@ -16,7 +16,7 @@ header  {
 
 }
 
-header nav ul li a {
+header nav ul li  {
     font-size: 1.3em;
     color: #fff;
     float: right;
@@ -25,7 +25,7 @@ header nav ul li a {
 
 }
 
-header nav ul li a:hover {
+header nav ul li :hover {
     color: #315f9b;
 }
 header img {

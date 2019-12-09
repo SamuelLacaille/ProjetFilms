@@ -14,6 +14,7 @@ $success = false;
         <div class="mesfilms">
             <img src="">
             <p>Titre</p>
+
             <p>Date</p>
             <form action="filmuti.php" method="post">
                 <input type="number"name="rate" id="rate" placeholder="Note">
