@@ -1,6 +1,7 @@
 <?php
 include 'inc/pdo.php';
 include 'functions/functions.php';
+session_start();
 
 
 // informations du film selectionné + affiche du film

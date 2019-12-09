@@ -17,7 +17,7 @@
                 <li><a href="login.php">Login</a></li>
             <?php } else { ?>
                 <li><a href="admin.php">Admin</a></li>
-                <li><a href="userpage.php">Utilisateur</a></li>
+                <li><a href="userpage.php?id=<?php echo $_SESSION['login']['id'] ?>">Utilisateur</a></li>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
 
                 <li><?php echo $_SESSION['login']['pseudo']; ?></li>
