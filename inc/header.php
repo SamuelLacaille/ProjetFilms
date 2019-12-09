@@ -11,10 +11,16 @@
     <nav class="nav">
         <a href="index.php"><img src="assets/img/img2.png" ></a>
         <ul>
-            <li><a href="register.php">Inscription</a></li>
-            <li><a href="login.php">Login</a></li>
+            <?php if (!is_logged()) { ?>
 
-            <li><a href="admin.php">Admin</a></li>
+                <li><a href="register.php">Inscription</a></li>
+                <li><a href="login.php">Login</a></li>
+            <?php } else { ?>
+                <li><a href="admin.php">Admin</a></li>
+                <li><a href="deconnexion.php">Deconnexion</a></li>
+                <li><?php echo $_SESSION['login']['pseudo']; ?></li>
+            <?php } ?>
+
 
             <li><a href="index.php">Home</a></li>
         </ul>

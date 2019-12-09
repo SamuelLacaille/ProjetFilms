@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('functions/functions.php');
+include 'functions/functions.php';
 include('inc/pdo.php');
 $title = 'Mot de passe oublié';
 $errors = array();

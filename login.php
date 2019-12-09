@@ -1,8 +1,8 @@
 <?php
 session_start();
-include('inc/header.php');
+include 'functions/functions.php';
 require 'inc/pdo.php';
-require 'functions/functions.php';
+
 
 $errors = array();
 $success = false;
@@ -41,7 +41,7 @@ if (!empty($_POST['submitted'])) {
         }
     }
 }
-
+include('inc/header.php');
 
 ?>
 
