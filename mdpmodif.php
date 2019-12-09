@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'functions/functions.php';
 include('inc/pdo.php');
 $title = 'Modifier votre mot de passe';
