@@ -56,7 +56,7 @@ if(!empty($_POST['submitted'])) {
         $hash = password_hash($password1, PASSWORD_BCRYPT);
         $token = generateRandomString(255);
 
-        $sql = "INSERT INTO users VALUES (null, :pseudo, :email, :pass, :token, 'user', NOW())";
+        $sql = "INSERT INTO users VALUES (null, :pseudo, :email, :pass, 'user', :token, NOW())";
         $query = $pdo->prepare($sql);
         $query->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
         $query->bindValue(':email', $email, PDO::PARAM_STR);
