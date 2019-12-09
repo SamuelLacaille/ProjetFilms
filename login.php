@@ -7,8 +7,6 @@ require 'inc/pdo.php';
 $errors = array();
 $success = false;
 
-debug($_SESSION);
-
 
 if (!empty($_POST['submitted'])) {
     //XSS
