@@ -31,15 +31,13 @@ if (!empty($_POST['submitted'])) {
                     'role' => $user['role'],
                     'ip' => $_SERVER['REMOTE_ADDR']
                 );
-
+/*                header('Location: index.php');*/
             } else {
                 $errors['login'] = 'Pseudo ou email inconnu ou mot de passe oublié';
             }
 
         } else {
             $errors['login'] = 'pseudo ou email inconnu';
-
-
         }
     }
 }
