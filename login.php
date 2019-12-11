@@ -25,6 +25,7 @@ if (!empty($_POST['submitted'])) {
             if (password_verify($password, $user['password'])) {
                 $_SESSION['login'] = array(
                     'id' => $user['id'],
+                    'email' => $user['email'],
                     'pseudo' => $user['pseudo'],
                     'role' => $user['role'],
                     'ip' => $_SERVER['REMOTE_ADDR']

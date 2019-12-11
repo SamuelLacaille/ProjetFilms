@@ -3,7 +3,6 @@ session_start();
 include 'inc/pdo.php';
 include 'functions/functions.php';
 
-
 // informations du film selectionné + affiche du film
 //voir pagesingle
 //prettyurl -> url ?slug=sleg du film
@@ -18,7 +17,7 @@ if (!empty($_GET['slug'])) {
     $query = $pdo->prepare($sql);
     $query->execute();
     $film = $query->fetchAll();
-    // debug($film);
+     debug($film);
     if (!empty($film)) {
 
     } else {
@@ -62,7 +61,7 @@ include 'inc/header.php'; ?>
             <?php if (!is_logged()) { ?>
 
             <?php } else { ?>
-                <li><a href="maliste.php">Ajouter à ma liste</a></li>
+                <li><a href="maliste.php?id=<?php echo $film[0]['id']; ?>">Ajouter à ma liste</a></li>
             <?php } ?>
 
 

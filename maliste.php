@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'functions/functions.php';
-include 'inc/header.php';
+
 include 'inc/pdo.php';
 //recup ID user dans SESSION
 //recup ID film $film0id
@@ -39,26 +39,37 @@ include 'inc/pdo.php';
     }
 */
 
-debug($_SESSION);
 
 $errors = array();
 $success = false;
 
 
 
-
 //vérification de l'existence de l'ID
-
+debug($_SESSION);
+debug($_GET);
 if (!empty($_SESSION['login']['id'])) {
     $userid = $_SESSION['login']['id'];
-    $sql = "SELECT * FROM users WHERE id = :id";
+    $sql = "SELECT id FROM users WHERE id = :id";
     $query = $pdo->prepare($sql);
     $query->bindValue(':id', $userid, PDO::PARAM_INT);
     $query->execute();
     $userinfos = $query->fetch();
 
+   if (!empty($_GET['id'])) {
+        $movieid = $_GET['id'];
+        $sql = "SELECT id FROM movies_full WHERE id = :id";
+        $query = $pdo->prepare($sql);
+        $query->bindValue(':id', $movieid, PDO::PARAM_INT);
+        $query->execute();
+        $movies = $query->fetch();
+
+    } else {
+        die('no ID');
+
+    }
 } else {
-    die('no ID');
+    die('no ID1');
 
 }
 //récupération de ses informations
@@ -73,9 +84,15 @@ if (!empty($userinfos)) {
     $query->bindValue(':id', $userid, PDO::PARAM_INT);
     $query->execute();
     $movies = $query->fetchAll();
-    debug($movies);
 }
-
+if (!empty($movies)) {
+    $sql = "INSERT INTO movie_user VALUES (null, :user_id, :movie_id, null, NOW(), null";
+    $query = $pdo->prepare($sql);
+    $query->bindValue(':user_id', $userinfos, PDO::PARAM_STR);
+    $query->bindValue(':movie_id', $movies, PDO::PARAM_STR);
+    $query->execute();
+    $success = true;
+}
 
 
 ?>

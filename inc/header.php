@@ -18,7 +18,7 @@
             <?php } else { ?>
                 <li><a href="deconnexion.php">Deconnexion</a></li>
                 <li><a href="admin.php">Admin</a></li>
-                <li><a href="userpage.php">Utilisateur</a></li>
+                <li><a href="compte.php">Utilisateur</a></li>
 
 
                 <li><?php echo $_SESSION['login']['pseudo']; ?></li>
