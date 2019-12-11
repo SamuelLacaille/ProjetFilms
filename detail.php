@@ -17,7 +17,7 @@ if (!empty($_GET['slug'])) {
     $query = $pdo->prepare($sql);
     $query->execute();
     $film = $query->fetchAll();
-     debug($film);
+
     if (!empty($film)) {
 
     } else {

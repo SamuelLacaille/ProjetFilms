@@ -12,8 +12,7 @@ $success = false;
 
 
 //vérification de l'existence de l'ID
-debug($_SESSION);
-debug($_GET);
+
 if (!empty($_SESSION['login']['id'])) {
     $userid = $_SESSION['login']['id'];
     $sql = "SELECT id FROM users WHERE id = :id";
@@ -37,7 +36,6 @@ if (!empty($_SESSION['login']['id'])) {
             $query->bindValue(':user_id', $userid, PDO::PARAM_INT);
             $query->bindValue(':movie_id', $movieid, PDO::PARAM_INT);
             $query->execute();
-
         }
     } else {die ('No ID');}
 } else {die ('No ID');}
@@ -49,6 +47,6 @@ if (!empty($_SESSION['login']['id'])) {
 
 ?>
 
-<h1>Ma liste de film</h1>
+<a href="userpage.php"> <h1>Ma liste de film</h1> </a>
 
 
