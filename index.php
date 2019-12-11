@@ -21,31 +21,58 @@ $movies = $query->fetchAll();
     $query->execute();
     $decennie = $query->fetchAll();
 
-
-
 } */
 
 if(!empty($_POST['tri'])) {
     $sql = "SELECT * FROM movies_full WHERE 1 = 1";
     $genres = $_POST['genres'];
+ //   $year =  $_POST['year'];
     if (!empty($genres)) {
         $sql .= ' AND  genres LIKE "%' . $genres[0] . '%" ';
 
 
-        echo $sql;
+        //echo $sql;
         $query = $pdo->prepare($sql);
         $query->execute();
         $genresMovies = $query->fetchAll();
     }
+  /*  if(!empty($year)){
+        $sql .= ' AND year LIKE "%' . $year[0] . '%" ';
+        echo $sql;
+
+        $query = $pdo->prepare($sql);
+        $query->execute();
+        $yearsMovies = $query->fetchAll();
 
 
-
+    } */
 }
 
 
 
 
 
+
+
+/*$arrayDecennie = array('1880-1889',
+    '1890-1899',
+    '1900-1909',
+    '1910-1919',
+    '1920-1929',
+    '1930-1939',
+    '1940-1949',
+    '1950-1959',
+    '1960-1969',
+    '1970-1979',
+    '1980-1989',
+    '1990-1999',
+    '2000-2009',
+    '2010-2019');
+
+$annee1 = explode('-', $arrayDecennie[0]);
+// print_r($annee1);
+$annee2 = explode('-', $arrayDecennie[1]);
+*/
 
 
 
@@ -118,28 +145,7 @@ include 'inc/header.php';
             <p>Par décennie : </p>
 
             <div>
-                <?php
-                $arrayDecennie = array( '1880-1889',
-                    '1890-1899',
-                    '1900-1909',
-                    '1910-1919',
-                    '1920-1929',
-                    '1930-1939',
-                    '1940-1949',
-                    '1950-1959',
-                    '1960-1969',
-                    '1970-1979',
-                    '1980-1989',
-                    '1990-1999',
-                    '2000-2009',
-                    '2010-2019');
 
-                $annee1 = explode('-',$arrayDecennie[0]);
-                // print_r($annee1);
-                $annee2 = explode('-',$arrayDecennie[1]);
-
-
-                ?>
 
 
                 <input type="number" id="dateFilm" name="dateFilm"
